@@ -4,13 +4,15 @@ import {color, spacing} from "../../../theme"
 
 const CONTAINER: ViewStyle = {
   padding: spacing[5],
-  // elevation: 0,
-  // shadowOpacity: 0,
   minHeight: 100,
-  borderColor: color.line, // Todo: replace with shadow
-  borderWidth: 1,
   marginBottom: 15,
   borderRadius: 8,
+
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 1 },
+  shadowOpacity: 0.2,
+  shadowRadius: 12,
+  elevation: 10
 }
 
 export interface UiCardProps {

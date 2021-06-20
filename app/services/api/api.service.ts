@@ -1,26 +1,21 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from "axios"
+import axios, { AxiosInstance } from "axios"
 import { JobEndpoint } from "./endpoints"
 import { ApiEndpoint } from "./api-endpoint"
 
 const API_URL = 'https://ioniconf-2021-jobs.herokuapp.com/'; // move to env file
 
-class MockRequesterError extends Error {
-  public config: AxiosRequestConfig
-
-  constructor(...params) {
-    super(...params)
-    // Set the prototype explicitly.
-    Object.setPrototypeOf(this, MockRequesterError.prototype)
-  }
-}
 
 /**
  * Manages all requests to the API.
  */
-export class Api {
+export class ApiService {
   private axiosInstance: AxiosInstance
 
   endpoints = new Map<any, ApiEndpoint>()
+
+  constructor() {
+    this.setup();
+  }
 
   /**
    * Sets up the API.  This will be called during the bootstrapping
@@ -46,7 +41,7 @@ export class Api {
     return this.getEndpoint(JobEndpoint)
   }
 
-  private getEndpoint<T extends ApiEndpoint>(Type: { new (api: Api): T }): T {
+  private getEndpoint<T extends ApiEndpoint>(Type: { new (api: ApiService): T }): T {
     let instance: T = this.endpoints.get(Type) as T
     if (!instance) {
       instance = new Type(this)
@@ -55,3 +50,5 @@ export class Api {
     return instance
   }
 }
+
+export const apiService = new ApiService();

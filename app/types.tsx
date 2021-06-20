@@ -5,6 +5,6 @@
 
 export type RootStackParamList = {
   home: undefined;
-  'job.details': undefined;
+  'job.details': { slug: string };
   '404': undefined;
 };

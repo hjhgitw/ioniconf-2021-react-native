@@ -17,8 +17,6 @@ export function Icon(props: IconProps) {
     return acc;
   }, {} as ImageStyle);
 
-  console.log('shortHandStyle', shortHandStyle)
-
   const style: ImageStyle = { ...ROOT, ...styleOverride, ...shortHandStyle }
 
   return (

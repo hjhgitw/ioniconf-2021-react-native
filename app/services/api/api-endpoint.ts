@@ -1,14 +1,10 @@
-import { Api } from "./api"
+import { ApiService } from "./api.service"
 import {AxiosInstance} from "axios";
 
 export class ApiEndpoint {
-  constructor(protected api: Api) {}
+  constructor(protected api: ApiService) {}
 
-  protected get client(): AxiosInstance {
+  public client(): AxiosInstance {
     return this.api.clientWithoutAuth();
   }
-
-  // protected get authClient(): AxiosInstance {
-  //   return this.api.clientWithAuth();
-  // }
 }
