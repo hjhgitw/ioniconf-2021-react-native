@@ -4,6 +4,7 @@
     "slug": "expo-template-tabs",
     "version": "1.0.0",
     "orientation": "portrait",
+    "entryPoint": "index.ts",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { View, ViewStyle } from "react-native"
-import { spacing } from "../../theme"
+import { spacing } from "../../../theme"
 import { flatten, mergeAll } from "ramda"
 
 const spacer = spacing[3]

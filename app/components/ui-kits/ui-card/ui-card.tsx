@@ -1,6 +1,6 @@
 import * as React from "react"
-import {View, ViewStyle} from "react-native"
-import {color, spacing} from "../../theme"
+import {StyleProp, View, ViewStyle} from "react-native"
+import {color, spacing} from "../../../theme"
 
 const CONTAINER: ViewStyle = {
   padding: spacing[5],
@@ -17,7 +17,7 @@ export interface UiCardProps {
   /**
    * An optional style override useful for padding & margin.
    */
-  style?: ViewStyle
+  style?: StyleProp<ViewStyle>
   children?: React.ReactNode
 }
 

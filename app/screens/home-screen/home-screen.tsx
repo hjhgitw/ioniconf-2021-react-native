@@ -3,11 +3,11 @@ import {
   Button,
   Header,
   Screen,
-  ScreenSection, UiCard,
+  ScreenSection,
 } from "../../components"
 import { useNavigation } from "@react-navigation/native"
 import { color } from "../../theme"
-import {View} from "react-native";
+import {JobsListItem} from "../../components/JobsListItem";
 
 export const HomeScreen = () => {
   // Pull in one of our MST stores
@@ -22,10 +22,7 @@ export const HomeScreen = () => {
   return (
     <Screen preset="scroll" header={header} backgroundColor={color.palette.offWhite}>
       <ScreenSection preset="main">
-        <UiCard />
-        <UiCard />
-        <UiCard />
-        <UiCard />
+        {Array.from({length: 12}, i => i).map((n) => <JobsListItem key={n} />)}
         <Button text="Details" onPress={() => navigation.navigate("job.details")} />
       </ScreenSection>
     </Screen>
