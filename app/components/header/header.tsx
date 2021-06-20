@@ -14,9 +14,9 @@ const ROOT: ViewStyle = {
   paddingTop: spacing[4],
   paddingBottom: spacing[4],
   justifyContent: "flex-start",
-  backgroundColor: color.palette.white,
+  backgroundColor: color.primary,
 }
-const TITLE: TextStyle = { textAlign: "center", color: color.accentDarker, fontWeight: "bold" }
+const TITLE: TextStyle = { textAlign: "left", color: color.palette.white, fontWeight: "bold", fontSize: 20 }
 const TITLE_MIDDLE: ViewStyle = { flex: 1, justifyContent: "center" }
 const LEFT: ViewStyle = { width: 32 }
 const EDGE_WRAPPER: ViewStyle = { flexDirection: "row", alignItems: "center" }
@@ -50,7 +50,7 @@ export function Header(props: HeaderProps) {
           </View>
         </Button>
       ) : (
-        <View style={LEFT} />
+          leftText ? <View style={LEFT} /> : null
       )}
       <View style={TITLE_MIDDLE}>
         <Text style={{ ...TITLE, ...titleStyle }} text={header} />

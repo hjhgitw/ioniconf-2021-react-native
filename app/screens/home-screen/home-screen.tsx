@@ -18,7 +18,7 @@ export const HomeScreen = () => {
   // Pull in navigation via hook
   const navigation = useNavigation()
 
-  const header = <Header headerText={"Home"} />
+  const header = <Header headerText={"Jobs"} />
   return (
     <Screen preset="scroll" header={header} backgroundColor={color.palette.offWhite}>
       <ScreenSection preset="main">

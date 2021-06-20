@@ -27,11 +27,11 @@ export const color = {
   /**
    * The main tinting color.
    */
-  primary: palette.blue,
+  primary: palette.purple,
   /**
    * The main tinting color, but darker.
    */
-  primaryDarker: palette.blue,
+  primaryDarker: palette.purple,
   /**
    * A subtle color used for borders and lines.
    */
