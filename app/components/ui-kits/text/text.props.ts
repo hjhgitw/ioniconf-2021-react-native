@@ -1,4 +1,4 @@
-import { TextStyle, TextProps as TextProperties } from "react-native"
+import {TextStyle, TextProps as TextProperties, StyleProp} from "react-native"
 import { TextPresets } from "./text.presets"
 
 export interface TextProps extends TextProperties {
@@ -15,10 +15,12 @@ export interface TextProps extends TextProperties {
   /**
    * An optional style override useful for padding & margin.
    */
-  style?: TextStyle | TextStyle[]
+  style?: StyleProp<TextStyle>
 
   /**
    * One of the different types of text presets.
    */
-  preset?: TextPresets
+  preset?: TextPresets | TextPresets[]
+
+  mb?: number
 }

@@ -11,12 +11,13 @@ import { mergeAll, flatten } from "ramda"
  */
 export function Text(props: TextProps) {
   // grab the props
-  const { preset = "default", text, children, style: styleOverride, ...rest } = props
+  const { preset = "default", text, children, style: styleOverride, mb: marginBottom, ...rest } = props
 
   // figure out which content to use
   const content = text || children
+  const normalizedPreset = Array.isArray(preset) ? mergeAll(preset.map(p => presets[p])) : presets[preset];
 
-  const style = mergeAll(flatten([presets[preset] || presets.default, styleOverride]))
+  const style = mergeAll(flatten([ normalizedPreset || presets.default, styleOverride, marginBottom !== undefined ? {marginBottom} : null]))
 
   return (
     <ReactNativeText {...rest} style={style}>

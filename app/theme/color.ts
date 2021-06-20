@@ -28,28 +28,22 @@ export const color = {
    * The main tinting color.
    */
   primary: palette.purple,
-  /**
-   * The main tinting color, but darker.
-   */
-  primaryDarker: palette.purple,
+
+  primaryAlpha50: `${palette.purple}80`,
+
   /**
    * A subtle color used for borders and lines.
    */
-  line: palette.offWhite,
-  /**
-   * The default color of text in many components.
-   */
-  text: palette.grayLighter,
-  /**
-   * Secondary information.
-   */
-  dim: palette.lightGrey,
+  line: palette.grayLightest,
   /**
    * Error messages and icons.
    */
   error: palette.angry,
-
-  /* Brand */
-  accent: palette.gray,
-  accentDarker: palette.gray,
+  /**
+   * The default color of text in many components.
+   */
+  text: palette.grayLighter,
+  textDark: palette.gray,
+  textTertiary: palette.white,
+  textTertiaryDark: palette.offWhite,
 }

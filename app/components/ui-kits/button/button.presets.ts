@@ -67,6 +67,10 @@ export const baseTextPresets = {
     paddingHorizontal: 0,
     paddingVertical: 0,
   } as TextStyle,
+  clear: {
+    ...BASE_TEXT,
+    color: color.primary,
+  } as TextStyle,
 }
 
 export const textPresets = {

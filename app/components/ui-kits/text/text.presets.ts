@@ -1,5 +1,5 @@
 import { TextStyle } from "react-native"
-import { color, typography } from "../../../theme"
+import {color, sizing, typography} from "../../../theme"
 
 /**
  * All text will start off looking like this.
@@ -7,7 +7,7 @@ import { color, typography } from "../../../theme"
 const BASE: TextStyle = {
   fontFamily: typography.primary,
   color: color.text,
-  fontSize: 15,
+  fontSize: sizing[4],
 }
 
 /**
@@ -19,30 +19,34 @@ export const presets = {
   /**
    * The default text styles.
    */
-  default: BASE,
-
-  /**
-   * A bold version of the default text.
-   */
-  bold: { ...BASE, fontWeight: "bold" } as TextStyle,
+  default: {...BASE, color: color.text},
 
   /**
    * Large headers.
    */
-  header: { ...BASE, fontSize: 24, fontWeight: "bold" } as TextStyle,
+  header: { ...BASE, color: color.text, fontSize: 24, fontWeight: "bold" } as TextStyle,
 
   /**
    * Field labels that appear on forms above the inputs.
    */
-  fieldLabel: { ...BASE, fontSize: 13, color: color.dim } as TextStyle,
+  fieldLabel: { ...BASE, color: color.text, fontSize: 13 } as TextStyle,
 
-  /**
-   * A smaller piece of secondard information.
-   */
-  secondary: { ...BASE, fontSize: 9, color: color.dim } as TextStyle,
+  // Colors
+  primary: { color: color.primary } as TextStyle,
+  dark: { color: color.textDark } as TextStyle,
+  tertiary: { color: color.textTertiary } as TextStyle,
+  tertiaryDark: { color: color.textTertiaryDark } as TextStyle,
+  // light100: { ...BASE, color: color.palette.white } as TextStyle,
+  // light200: { ...BASE, color: color.palette.white } as TextStyle,
 
-  h2: { ...BASE, fontSize: 24, fontWeight: "bold", color: color.accentDarker } as TextStyle,
-  h3: { ...BASE, fontSize: 18, color: color.accentDarker } as TextStyle,
+  // Sizes
+  large: { ...BASE, fontSize: sizing[8] } as TextStyle,
+  h1: { ...BASE, fontSize: sizing[7] } as TextStyle,
+  h2: { ...BASE, fontSize: sizing[6] } as TextStyle,
+  h3: { ...BASE, fontSize: sizing[5] } as TextStyle,
+  h4: { ...BASE, fontSize: sizing[4] } as TextStyle,
+  h5: { ...BASE, fontSize: sizing[3] } as TextStyle,
+  h6: { ...BASE, fontSize: sizing[2] } as TextStyle,
 }
 
 /**

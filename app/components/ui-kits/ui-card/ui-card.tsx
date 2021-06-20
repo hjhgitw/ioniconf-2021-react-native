@@ -7,8 +7,8 @@ const CONTAINER: ViewStyle = {
   // elevation: 0,
   // shadowOpacity: 0,
   minHeight: 100,
-  borderColor: color.primary, // Todo: replace with shadow
-  borderWidth: 2,
+  borderColor: color.line, // Todo: replace with shadow
+  borderWidth: 1,
   marginBottom: 15,
   borderRadius: 8,
 }
