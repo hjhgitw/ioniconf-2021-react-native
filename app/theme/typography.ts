@@ -18,6 +18,7 @@ export const typography = {
    * The primary font.  Used in most places.
    */
   primary: Platform.select({ ios: "Roboto-Regular", android: "Roboto-Regular", web: "Roboto-Regular" }),
+  primaryBold: Platform.select({ ios: "Roboto-Bold", android: "Roboto-Bold", web: "Roboto-Bold" }),
 
   /**
    * An alternate font used for perhaps titles and stuff.

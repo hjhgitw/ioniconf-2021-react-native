@@ -47,6 +47,9 @@ export const presets = {
   h4: { ...BASE, fontSize: sizing[4] } as TextStyle,
   h5: { ...BASE, fontSize: sizing[3] } as TextStyle,
   h6: { ...BASE, fontSize: sizing[2] } as TextStyle,
+
+  // Weight
+  bold: { fontWeight: 'bold', fontFamily: typography.primaryBold } as TextStyle,
 }
 
 /**

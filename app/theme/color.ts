@@ -28,6 +28,7 @@ export const color = {
    * The main tinting color.
    */
   primary: palette.purple,
+  primaryLighter: palette.purpleLighter,
 
   primaryAlpha50: `${palette.purple}80`,
 

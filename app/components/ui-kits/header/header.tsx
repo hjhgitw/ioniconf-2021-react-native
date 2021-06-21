@@ -45,7 +45,7 @@ export function Header(props: HeaderProps) {
       {leftIcon || leftText ? (
         <Button preset="link" onPress={onLeftPress}>
           <View style={EDGE_WRAPPER}>
-            {leftIcon && <Icon icon={leftIcon} style={leftText ? ICON_MARGIN : undefined} />}
+            {leftIcon && <Icon icon={leftIcon} style={(leftText || header) ? ICON_MARGIN : undefined} />}
             {leftText && <Text text={leftText || ""} />}
           </View>
         </Button>
@@ -58,7 +58,7 @@ export function Header(props: HeaderProps) {
       {rightIcon || rightText ? (
         <Button preset="link" onPress={onRightPress}>
           <View style={EDGE_WRAPPER}>
-            {rightIcon && <Icon icon={rightIcon} style={rightText ? ICON_MARGIN : undefined} />}
+            {rightIcon && <Icon icon={rightIcon} style={(rightText || header) ? ICON_MARGIN : undefined} />}
             {rightText && <Text text={rightText || ""} />}
           </View>
         </Button>

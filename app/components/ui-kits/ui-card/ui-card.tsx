@@ -3,10 +3,11 @@ import {StyleProp, View, ViewStyle} from "react-native"
 import {color, spacing} from "../../../theme"
 
 const CONTAINER: ViewStyle = {
-  padding: spacing[5],
-  minHeight: 100,
+  padding: spacing[4],
+  minHeight: 10,
   marginBottom: 15,
   borderRadius: 8,
+  backgroundColor: color.background,
 
   shadowColor: '#000',
   shadowOffset: { width: 0, height: 1 },

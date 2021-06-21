@@ -1,7 +1,6 @@
 import { ViewStyle, TextStyle } from "react-native"
-import { color, spacing } from "../../../theme"
+import {color, sizing, spacing} from "../../../theme"
 
-const size = [0, 4, 8, 12, 16, 24, 32, 48, 64]
 
 /**
  * All text will start off looking like this.
@@ -16,6 +15,8 @@ const BASE_VIEW: ViewStyle = {
 
 const BASE_TEXT: TextStyle = {
   paddingHorizontal: spacing[3],
+  paddingVertical: spacing[1],
+  fontSize: sizing[3]
 }
 
 /**
@@ -57,7 +58,7 @@ export const viewPresets = {
 export const baseTextPresets = {
   primary: {
     ...BASE_TEXT,
-    fontSize: size[4],
+    fontSize: sizing[4],
     color: color.palette.white,
     fontWeight: "bold",
   } as TextStyle,
@@ -77,11 +78,11 @@ export const textPresets = {
   ...baseTextPresets,
   "primary:sm": {
     ...baseTextPresets.primary,
-    fontSize: size[3],
+    fontSize: sizing[3],
   } as TextStyle,
   "primary:lg": {
     ...baseTextPresets.primary,
-    fontSize: size[5],
+    fontSize: sizing[5],
     paddingVertical: spacing[3],
     paddingHorizontal: spacing[3],
   } as TextStyle,

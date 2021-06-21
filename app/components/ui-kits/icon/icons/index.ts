@@ -12,6 +12,7 @@ export const icons = {
   'add-circle': require('./add-circle.png'),
   'moon-dark': require('./moon-dark.png'),
   'marker-purple': require('./marker-purple.png'),
+  'back': require('./arrow-left.png'),
 }
 
 export type IconTypes = keyof typeof icons

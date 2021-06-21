@@ -8,6 +8,7 @@ import { useColorScheme } from './hooks/useColorScheme';
 import { useLoadedAssets } from './hooks/useLoadedAssets';
 import Navigation from './navigation';
 import { setBreakPoints } from 'react-native-responsive-grid';
+import {RneThemeProvider} from "./theme/react-native-elements";
 
 setBreakPoints({
   SMALL_Width: 375,
@@ -29,8 +30,10 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
+        <RneThemeProvider>
+          <Navigation colorScheme={colorScheme} />
+          <StatusBar />
+        </RneThemeProvider>
       </SafeAreaProvider>
     );
   }
