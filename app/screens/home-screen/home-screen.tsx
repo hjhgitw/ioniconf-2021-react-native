@@ -42,13 +42,13 @@ export const HomeScreen = () => {
   return (
     <Screen preset="scroll" header={header} backgroundColor={color.palette.offWhite}>
       <ScreenSection preset="main">
-        <div style={{ display: 'flex', flexWrap: 'wrap', flex: 1, flexDirection: 'row'}}>
+        <View style={{ display: 'flex', flexWrap: 'wrap', flex: 1, flexDirection: 'row'}}>
               {state.data.map(job => (
                   <View key={job.job_id} style={{ width: `${sizes[mediaSizeWidth]}%`, paddingLeft: spacing[2], paddingRight: spacing[2] }}>
                     <JobsListItem job={job}/>
                   </View>
               ))}
-        </div>
+        </View>
       </ScreenSection>
     </Screen>
   )

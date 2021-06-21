@@ -1,7 +1,9 @@
 import React from "react"
 import { View, ViewStyle, TextStyle, ImageStyle } from "react-native"
 import { HeaderProps } from "./header.props"
-import { Button, Text, Icon } from ".."
+import { Button } from "../button/button"
+import { Text } from "../text/text"
+import { Icon } from "../icon/icon"
 import { color, spacing } from "../../../theme"
 
 // static styles
