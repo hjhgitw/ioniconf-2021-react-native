@@ -28,6 +28,7 @@ export const JobDetailsScreen = ( ) => {
     fetching: false,
     data: null,
   });
+  const job = state.data;
 
   useEffect(() => {
     setState({...state, fetching: true, error: null });
@@ -69,7 +70,7 @@ export const JobDetailsScreen = ( ) => {
             </View>
           </UiCard>
 
-          <JobsDetailItem job={state.data} />
+          <JobsDetailItem job={job} />
 
           <UiCard>
             <Text preset={['h4', 'dark']} text={'Job Status'} style={{ marginBottom: spacing[3]}} />
@@ -95,22 +96,17 @@ export const JobDetailsScreen = ( ) => {
             </View>
             <View style={JOB_QUALIFICATION_ROW}>
               <Text preset={['h5', 'primary']} text={'Job Instructions'} />
-              <Text preset={['h4', 'dark']} text={'Providence Place is looking for a qualified CNA. Check in at the security station and they will tell you where to go'} />
+              <Text preset={['h4', 'dark']} text={job.job_description} />
             </View>
           </UiCard>
 
           <UiCard>
             <Text preset={['h4', 'dark']} text={'Shits in this job'} style={TEXT_CENTER} />
-
           </UiCard>
 
           <UiCard style={{height: 20}}>
-            <View></View>
             <LinearProgress value={0.17} color="primary" variant={'determinate'} />
-            <View></View>
           </UiCard>
-
-          <Button text="Home" onPress={() => navigation.navigate("home")} />
         </ScreenSection>
       )}
     </Screen>
