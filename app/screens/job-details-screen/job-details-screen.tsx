@@ -102,7 +102,7 @@ export const JobDetailsScreen = ( ) => {
           </UiCard>
 
           <UiCard>
-            <Text preset={['h4', 'dark']} text={'Shits in this job'} style={TEXT_CENTER} />
+            <Text preset={['h4', 'dark']} text={'Shifts in this job'} style={TEXT_CENTER} />
             <Calendar
 
             />
