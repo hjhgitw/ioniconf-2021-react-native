@@ -14,6 +14,7 @@ import {
 } from 'react-native-elements'
 import { LinearProgress } from 'react-native-elements';
 import {apiService} from "../../services/api";
+import {Calendar} from 'react-native-calendars';
 
 const TEXT_CENTER: TextStyle = {textAlign: "center"}
 const JOB_META_LABEL: TextStyle = {marginBottom: spacing[1]}
@@ -102,6 +103,9 @@ export const JobDetailsScreen = ( ) => {
 
           <UiCard>
             <Text preset={['h4', 'dark']} text={'Shits in this job'} style={TEXT_CENTER} />
+            <Calendar
+
+            />
           </UiCard>
 
           <UiCard style={{height: 20}}>
