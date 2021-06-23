@@ -15,6 +15,8 @@ import {
 import { LinearProgress } from 'react-native-elements';
 import {apiService} from "../../services/api";
 import {Calendar} from 'react-native-calendars';
+import {JobsSpecialityBadge} from "../../components/JobSpecialityBadge";
+import {JobLicenseBadge} from "../../components/JobLicenseBadge";
 
 const TEXT_CENTER: TextStyle = {textAlign: "center"}
 const JOB_META_LABEL: TextStyle = {marginBottom: spacing[1]}
@@ -67,7 +69,7 @@ export const JobDetailsScreen = ( ) => {
             <Divider orientation={"vertical"} />
             <View>
               <Text style={[TEXT_CENTER, JOB_META_LABEL]} preset={['h5', 'primary']} text={'License Type'} />
-              <UiBadge preset={"primary"} text={'CNA'} center={true} />
+              <JobLicenseBadge text={job.licenseType} center={true} />
             </View>
           </UiCard>
 
@@ -81,7 +83,17 @@ export const JobDetailsScreen = ( ) => {
           <UiCard>
             <View style={JOB_QUALIFICATION_ROW}>
               <Text style={JOB_QUALIFICATION_ROW_MB} preset={['h5', 'primary']} text={'Speciality'} />
-              <UiBadge preset={'primary'} text={'Skilled Nursing'} />
+              <View style={{display: "flex", flexDirection: "row"}}>
+              {job.jobSpecialties.map(js => (
+                  <JobsSpecialityBadge
+                      key={js.specialty.specialty_acronym}
+                      acronym={js.specialty.specialty_acronym}
+                      title={js.specialty.specialty_title}
+                      color={js.specialty.specialty_color}
+                      group={job.jobSpecialties.length > 1}
+                  />
+                ))}
+              </View>
             </View>
             <View style={JOB_QUALIFICATION_ROW}>
               <Text preset={['h5', 'primary']} text={'Type of Job'} />

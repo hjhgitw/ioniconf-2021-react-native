@@ -12,6 +12,7 @@ export const palette = {
   lighterGrey: "#CDD4DA",
   angry: "#dd3333",
   success: "#30893D",
+  greenDark: 'rgb(29, 129, 146)',
   successLighter: "#D9FFD5",
   gray: "#262626",
   grayLighter: "#737373",

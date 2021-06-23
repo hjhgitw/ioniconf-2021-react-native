@@ -1,9 +1,11 @@
 import * as React from "react"
 import {Image, ImageStyle, StyleProp, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native"
 import {color, spacing, sizing} from "../theme"
-import {Button, Icon, Text, UiCard} from "./ui-kits";
+import {Button, Icon, Text, UiBadge, UiCard} from "./ui-kits";
 import {useNavigation} from "@react-navigation/native";
 import {JobHelper} from "../helpers/job.helper";
+import {JobsSpecialityBadge} from "./JobSpecialityBadge";
+import {UiBadgePresetNames} from "./ui-kits/ui-badge/ui-badge.presets";
 
 export interface JobsListItemProps {
     /**
@@ -35,6 +37,7 @@ export function JobsListItem(props: JobsListItemProps) {
     const { style, job } = props
     const navigation = useNavigation()
     const goToDetails = () => navigation.navigate('job.details', {slug: job.job_id})
+    const tags: {text: string, preset: UiBadgePresetNames}[] = [{text: 'Open', preset: 'success'}, { text: 'CNA', preset: 'primary'}]
 
     return (
         <UiCard style={[CONTAINER, style]}>
@@ -46,9 +49,23 @@ export function JobsListItem(props: JobsListItemProps) {
                     <Text preset={['h3', 'tertiary']} style={CARD_HEADER_CONTENT__AMOUNT} text={`$${JobHelper.jobAmount(job)}`} />
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={BOX_PADDING} onPress={goToDetails}>
+            <TouchableOpacity style={[BOX_PADDING, {paddingTop: spacing[2]}]} onPress={goToDetails}>
+                <View style={{display: "flex", flexDirection: "row", marginBottom: spacing[1] }}>
+                    {tags.map((t, i) => (<UiBadge key={t.text} text={t.text} preset={t.preset} style={{ marginRight: tags[i + 1] ? spacing[3] : 0}} />))}
+                </View>
                 <Text preset={['h4', 'dark']} text={job.facility.fac_name} mb={spacing[3]} />
-                <Text preset={'h5'} text={JobHelper.jobFacilityLocation(job)} mb={spacing[4]} />
+                <Text preset={'h5'} text={JobHelper.jobFacilityLocation(job)} mb={spacing[5]} />
+                <View style={{display: "flex", flexDirection: "row", marginBottom: spacing[4] }}>
+                    {job.jobSpecialties.map(js => (
+                        <JobsSpecialityBadge
+                            key={js.specialty.specialty_acronym}
+                            acronym={js.specialty.specialty_acronym}
+                            title={js.specialty.specialty_title}
+                            color={js.specialty.specialty_color}
+                            group={job.jobSpecialties.length > 1}
+                        />
+                    ))}
+                </View>
                 <View style={ATTRIBUTES_ROW}>
                     <View style={ATTRIBUTES_ROW_ITEM}>
                         <Icon icon={"per-diem-grey"} width={sizing[5]} height={sizing[5]} />

@@ -9,8 +9,8 @@ export default {
   prefixes: [Linking.createURL("/")],
   config: {
     screens: {
-      'home': {},
-      'job.details': {},
+      Home: 'home',
+      JobDetails: 'job/:slug',
       NotFound: "*",
     },
   },
